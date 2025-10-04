@@ -1,0 +1,157 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Container for the main content */
+.container {
+    background: #ffffff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Header Styles */
+h1 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.file-input-wrapper:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+#file-name {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+input[type="submit"] {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Loading Indicator */
+#loader {
+    display: none;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Result Page Styles */
+.translation-container {
+    margin-top: 2em;
+}
+
+.translation {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-left: 5px solid #007bff;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+}
+
+.original {
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 0.5em;
+}
+
+.translated {
+    color: #212529;
+}
+
+/* Links */
+.action-link {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 1em;
+    transition: background-color 0.3s;
+}
+
+.download-link {
+    background-color: #007bff;
+    color: white;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}
+
+.another-file-link {
+    background-color: #6c757d;
+    color: white;
+    margin-left: 1em;
+}
+
+.another-file-link:hover {
+    background-color: #5a6268;
+}
