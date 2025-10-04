@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Translated Text</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Translation Result</h1>
+
+      <div style="text-align: center; margin-bottom: 2em;">
+        {% if docx_filename %}
+          <a href="{{ url_for('download_file', filename=docx_filename) }}" class="action-link download-link">Download .docx</a>
+        {% endif %}
+        <a href="/" class="action-link another-file-link">Translate another file</a>
+      </div>
+
+      <div class="translation-container">
+        {% for item in content %}
+          <div class="translation">
+            <p class="original">{{ item.original }}</p>
+            <p class="translated">{{ item.translated }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

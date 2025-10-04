@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PDF Translation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload a PDF to Translate</h1>
+      <form method="post" enctype="multipart/form-data" id="upload-form">
+        <label class="file-input-wrapper">
+          Choose File
+          <input type="file" name="file" id="file-input" required>
+        </label>
+        <span id="file-name">No file chosen</span>
+        <input type="submit" value="Upload & Translate">
+      </form>
+      <div id="loader"></div>
+    </div>
+    <script>
+      document.getElementById('file-input').addEventListener('change', function() {
+        var fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+        document.getElementById('file-name').textContent = fileName;
+      });
+
+      document.getElementById('upload-form').addEventListener('submit', function() {
+        // Show the loader and hide the form
+        document.getElementById('loader').style.display = 'block';
+        document.getElementById('upload-form').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
